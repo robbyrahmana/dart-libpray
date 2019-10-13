@@ -21,15 +21,15 @@ void main() {
         ..juristicMethod.replace(
             JuristicMethod.fromPreset(preset: JuristicMethodPreset.standard))
         ..highLatitudeAdjustment = HighLatitudeAdjustment.none
-        ..imsakMinutesAdjustment = 2
-        ..fajrMinutesAdjustment = 2
-        ..sunriseMinutesAdjustment = -2
+        ..imsakMinutesAdjustment = 0
+        ..fajrMinutesAdjustment = 0
+        ..sunriseMinutesAdjustment = 0
         ..dhuhaMinutesAdjustment = 0
-        ..dhuhrMinutesAdjustment = 2
-        ..asrMinutesAdjustment = 2
-        ..sunsetMinutesAdjustment = 2
-        ..maghribMinutesAdjustment = 1
-        ..ishaMinutesAdjustment = 2);
+        ..dhuhrMinutesAdjustment = 0
+        ..asrMinutesAdjustment = 0
+        ..sunsetMinutesAdjustment = 0
+        ..maghribMinutesAdjustment = 0
+        ..ishaMinutesAdjustment = 0);
 
   // Init location info.
   final Geocoordinate geo = Geocoordinate((GeocoordinateBuilder b) => b
