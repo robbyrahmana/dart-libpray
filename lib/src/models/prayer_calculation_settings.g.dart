@@ -82,6 +82,12 @@ class _$PrayerCalculationSettingsSerializer
         ..add(serializers.serialize(object.asrMinutesAdjustment,
             specifiedType: const FullType(int)));
     }
+    if (object.sunsetMinutesAdjustment != null) {
+      result
+        ..add('sunsetMinutesAdjustment')
+        ..add(serializers.serialize(object.sunsetMinutesAdjustment,
+            specifiedType: const FullType(int)));
+    }
     if (object.maghribMinutesAdjustment != null) {
       result
         ..add('maghribMinutesAdjustment')
@@ -152,6 +158,10 @@ class _$PrayerCalculationSettingsSerializer
           result.asrMinutesAdjustment = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
+        case 'sunsetMinutesAdjustment':
+          result.sunsetMinutesAdjustment = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
         case 'maghribMinutesAdjustment':
           result.maghribMinutesAdjustment = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
@@ -189,6 +199,8 @@ class _$PrayerCalculationSettings extends PrayerCalculationSettings {
   @override
   final int asrMinutesAdjustment;
   @override
+  final int sunsetMinutesAdjustment;
+  @override
   final int maghribMinutesAdjustment;
   @override
   final int ishaMinutesAdjustment;
@@ -208,6 +220,7 @@ class _$PrayerCalculationSettings extends PrayerCalculationSettings {
       this.dhuhaMinutesAdjustment,
       this.dhuhrMinutesAdjustment,
       this.asrMinutesAdjustment,
+      this.sunsetMinutesAdjustment,
       this.maghribMinutesAdjustment,
       this.ishaMinutesAdjustment})
       : super._() {
@@ -240,6 +253,7 @@ class _$PrayerCalculationSettings extends PrayerCalculationSettings {
         dhuhaMinutesAdjustment == other.dhuhaMinutesAdjustment &&
         dhuhrMinutesAdjustment == other.dhuhrMinutesAdjustment &&
         asrMinutesAdjustment == other.asrMinutesAdjustment &&
+        sunsetMinutesAdjustment == other.sunsetMinutesAdjustment &&
         maghribMinutesAdjustment == other.maghribMinutesAdjustment &&
         ishaMinutesAdjustment == other.ishaMinutesAdjustment;
   }
@@ -256,16 +270,22 @@ class _$PrayerCalculationSettings extends PrayerCalculationSettings {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc($jc(0, imsakParameter.hashCode),
-                                                calculationMethod.hashCode),
-                                            juristicMethod.hashCode),
-                                        highLatitudeAdjustment.hashCode),
-                                    imsakMinutesAdjustment.hashCode),
-                                fajrMinutesAdjustment.hashCode),
-                            sunriseMinutesAdjustment.hashCode),
-                        dhuhaMinutesAdjustment.hashCode),
-                    dhuhrMinutesAdjustment.hashCode),
-                asrMinutesAdjustment.hashCode),
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        0,
+                                                        imsakParameter
+                                                            .hashCode),
+                                                    calculationMethod.hashCode),
+                                                juristicMethod.hashCode),
+                                            highLatitudeAdjustment.hashCode),
+                                        imsakMinutesAdjustment.hashCode),
+                                    fajrMinutesAdjustment.hashCode),
+                                sunriseMinutesAdjustment.hashCode),
+                            dhuhaMinutesAdjustment.hashCode),
+                        dhuhrMinutesAdjustment.hashCode),
+                    asrMinutesAdjustment.hashCode),
+                sunsetMinutesAdjustment.hashCode),
             maghribMinutesAdjustment.hashCode),
         ishaMinutesAdjustment.hashCode));
   }
@@ -283,6 +303,7 @@ class _$PrayerCalculationSettings extends PrayerCalculationSettings {
           ..add('dhuhaMinutesAdjustment', dhuhaMinutesAdjustment)
           ..add('dhuhrMinutesAdjustment', dhuhrMinutesAdjustment)
           ..add('asrMinutesAdjustment', asrMinutesAdjustment)
+          ..add('sunsetMinutesAdjustment', sunsetMinutesAdjustment)
           ..add('maghribMinutesAdjustment', maghribMinutesAdjustment)
           ..add('ishaMinutesAdjustment', ishaMinutesAdjustment))
         .toString();
@@ -348,6 +369,11 @@ class PrayerCalculationSettingsBuilder
   set asrMinutesAdjustment(int asrMinutesAdjustment) =>
       _$this._asrMinutesAdjustment = asrMinutesAdjustment;
 
+  int _sunsetMinutesAdjustment;
+  int get sunsetMinutesAdjustment => _$this._sunsetMinutesAdjustment;
+  set sunsetMinutesAdjustment(int sunsetMinutesAdjustment) =>
+      _$this._sunsetMinutesAdjustment = sunsetMinutesAdjustment;
+
   int _maghribMinutesAdjustment;
   int get maghribMinutesAdjustment => _$this._maghribMinutesAdjustment;
   set maghribMinutesAdjustment(int maghribMinutesAdjustment) =>
@@ -372,6 +398,7 @@ class PrayerCalculationSettingsBuilder
       _dhuhaMinutesAdjustment = _$v.dhuhaMinutesAdjustment;
       _dhuhrMinutesAdjustment = _$v.dhuhrMinutesAdjustment;
       _asrMinutesAdjustment = _$v.asrMinutesAdjustment;
+      _sunsetMinutesAdjustment = _$v.sunsetMinutesAdjustment;
       _maghribMinutesAdjustment = _$v.maghribMinutesAdjustment;
       _ishaMinutesAdjustment = _$v.ishaMinutesAdjustment;
       _$v = null;
@@ -408,6 +435,7 @@ class PrayerCalculationSettingsBuilder
               dhuhaMinutesAdjustment: dhuhaMinutesAdjustment,
               dhuhrMinutesAdjustment: dhuhrMinutesAdjustment,
               asrMinutesAdjustment: asrMinutesAdjustment,
+              sunsetMinutesAdjustment: sunsetMinutesAdjustment,
               maghribMinutesAdjustment: maghribMinutesAdjustment,
               ishaMinutesAdjustment: ishaMinutesAdjustment);
     } catch (_) {

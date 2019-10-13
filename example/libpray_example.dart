@@ -19,22 +19,23 @@ void main() {
                 .departmentOfIslamicAdvancementOfMalaysia,
             when: DateTime.now().toUtc()))
         ..juristicMethod.replace(
-            JuristicMethod.fromPreset(preset: JuristicMethodPreset.hanafi))
+            JuristicMethod.fromPreset(preset: JuristicMethodPreset.standard))
         ..highLatitudeAdjustment = HighLatitudeAdjustment.none
-        ..imsakMinutesAdjustment = 0
-        ..fajrMinutesAdjustment = 0
-        ..sunriseMinutesAdjustment = 0
+        ..imsakMinutesAdjustment = 2
+        ..fajrMinutesAdjustment = 2
+        ..sunriseMinutesAdjustment = -2
         ..dhuhaMinutesAdjustment = 0
-        ..dhuhrMinutesAdjustment = 0
-        ..asrMinutesAdjustment = 0
-        ..maghribMinutesAdjustment = 0
-        ..ishaMinutesAdjustment = 0);
+        ..dhuhrMinutesAdjustment = 2
+        ..asrMinutesAdjustment = 2
+        ..sunsetMinutesAdjustment = 2
+        ..maghribMinutesAdjustment = 1
+        ..ishaMinutesAdjustment = 2);
 
   // Init location info.
   final Geocoordinate geo = Geocoordinate((GeocoordinateBuilder b) => b
     ..latitude = -7.8594867
     ..longitude = 110.3872098
-    ..altitude = 60);
+    ..altitude = 2.0);
   const double timezone = 7.0;
 
   // Generate prayer times for one day on April 12th, 2018.

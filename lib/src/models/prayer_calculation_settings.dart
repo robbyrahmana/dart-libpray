@@ -48,6 +48,7 @@ abstract class PrayerCalculationSettings
       ..dhuhaMinutesAdjustment = 0
       ..dhuhrMinutesAdjustment = 0
       ..asrMinutesAdjustment = 0
+      ..sunsetMinutesAdjustment = 0
       ..maghribMinutesAdjustment = 0
       ..ishaMinutesAdjustment = 0);
   }
@@ -99,6 +100,10 @@ abstract class PrayerCalculationSettings
   /// Minute adjustment parameter for asr prayer.
   @nullable
   int get asrMinutesAdjustment;
+
+  /// Minute adjustment parameter for sunset prayer.
+  @nullable
+  int get sunsetMinutesAdjustment;
 
   /// Minute adjustment parameter for maghrib prayer.
   @nullable

@@ -928,6 +928,7 @@ class _PrayerCalculator {
       ..dhuha = raw.dhuha + (settings.dhuhaMinutesAdjustment / 60.0)
       ..dhuhr = raw.dhuhr + (settings.dhuhrMinutesAdjustment / 60.0)
       ..asr = raw.asr + (settings.asrMinutesAdjustment / 60.0)
+      ..sunset = raw.sunset + (settings.sunsetMinutesAdjustment / 60.6)
       ..maghrib = raw.maghrib + (settings.maghribMinutesAdjustment / 60.0)
       ..isha = raw.isha + (settings.ishaMinutesAdjustment / 60.0);
 
