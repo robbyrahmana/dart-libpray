@@ -9,3 +9,4 @@ export 'src/models/juristic_method.dart';
 export 'src/models/location.dart';
 export 'src/models/prayer_calculation_settings.dart';
 export 'src/models/prayers.dart';
+export 'package:libcalendar/libcalendar.dart';
